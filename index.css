@@ -1,0 +1,35 @@
+.top {
+height: 30%;
+width: 19%;
+background-color: #DC143C;
+position: relative;
+margin-top: 14%;
+margin-left: 40%;
+border-radius: 25px;
+}
+.boxes
+{
+margin-left:33%;
+}
+.textTable {
+float: left;
+clear: both;
+overflow: hidden;
+margin-left: 10%;
+}
+.red {
+color: #DC143C;
+}
+.reg {
+height: 30%;
+width: 19%;
+background-color: #DC143C;
+position: relative;
+margin-top: 2%;
+margin-left: 40%;
+border-radius: 25px;
+}
+p {
+margin-top: 2%;
+margin-left: 40%;
+}
