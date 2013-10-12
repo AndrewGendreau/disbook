@@ -1,38 +1,38 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="index.css" />
-		<title> Disbook </title>
-	</head>
-	
-	
-	
-	
-	<script type="text/javascript">
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css" />
+<title> Disbook </title>
+</head>
+
+
+
+
+<script type="text/javascript">
         $(document).ready(function () {
             $("#btnSubmit").on("click", function () {
-			
-				var fname = $('input[name=FName]').val();
-				var lname = $('input[name=LName]').val();
-				var email = $('input[name=RegEmail]').val();
-				var password = $('input[name=password]').val();
-				var dob = $('input[name=birthday]').val();
-				
-				
-				var dataObject = new Object();
-				
-				dataObject.fname = fname;
-				dataObject.email = email;
-				dataObject.password = password;
-				dataObject.dob = dob;
-				dataObject.lname = lname;
-				var thing = 1;
-				if (thing == 1) {
+
+var fname = $('input[name=FName]').val();
+var lname = $('input[name=LName]').val();
+var email = $('input[name=RegEmail]').val();
+var password = $('input[name=password]').val();
+var dob = $('input[name=birthday]').val();
+
+
+var dataObject = new Object();
+
+dataObject.fname = fname;
+dataObject.email = email;
+dataObject.password = password;
+dataObject.dob = dob;
+dataObject.lname = lname;
+var thing = 1;
+if (thing == 1) {
                     $.ajax({
                         url: "http://localhost/DIS/register.php",
                         type: "post",
-                        data: dataObject,                       
+                        data: dataObject,
                         success: function (data) {
                             alert(data);
                         },
@@ -40,14 +40,14 @@
                             alert("failure");
                         }
                     });
-				}
-			})
-			
-		})
+}
+})
 
-		
-		
-		</script>
+})
+
+
+
+</script>
 
 
 
@@ -57,7 +57,7 @@
 <input type = "text" name="Emaillogin" placeholder="enter your email address"> <br />
 <input type="password" name="password" placeholder="enter your password"> <br />
   <input type="submit" value="Login">
-	</form>
+</form>
 </div>
 <div>
 <table width ="100%" class="textTable">
@@ -74,9 +74,7 @@
 <input type = "text" name="FName" placeholder="enter your first name"> <br />
 <input type = "text" name="LName" placeholder="enter last name"> <br />
 <input type = "text" name="RegEmail" placeholder="Email"> <br />
-<input type = "text" name="VerEmail" placeholder="Enter email again"> <br />
 <input type="password" name="password" placeholder="enter your password"> <br />
-<input type="password" name="Verpassword" placeholder="enter your password again"> <br />
 <input type="date" name="birthday" placeholder="Enter date: DD/MMM/YYYY">
 <input type="button" value="Submit" id ="btnSubmit">
 
