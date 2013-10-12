@@ -30,14 +30,14 @@ dataObject.lname = lname;
 var thing = 1;
 if (thing == 1) {
                     $.ajax({
-                        url: "http://localhost/DIS/register.php",
+                        url: "http://mumble/agendrea/register.php",
                         type: "post",
                         data: dataObject,
                         success: function (data) {
                             alert(data);
                         },
                         error: function () {
-                            alert("failure");
+                           alert("failure");
                         }
                     });
 }
@@ -52,10 +52,11 @@ if (thing == 1) {
 
 
 <body>
+
 <div class="top">
 <form action="" class = "boxes"> <br />
-<input type = "text" name="Emaillogin" placeholder="enter your email address"> <br />
-<input type="password" name="password" placeholder="enter your password"> <br />
+<input class = "logintext" type = "text" name="Emaillogin" placeholder="enter your email address"> <br />
+<input class = "logintext" type="password" name="password" placeholder="enter your password"> <br />
   <input type="submit" value="Login">
 </form>
 </div>
@@ -71,12 +72,12 @@ if (thing == 1) {
 <div class="reg">
 <p> Want to join up? <p>
 <br />
-<input type = "text" name="FName" placeholder="enter your first name"> <br />
-<input type = "text" name="LName" placeholder="enter last name"> <br />
-<input type = "text" name="RegEmail" placeholder="Email"> <br />
-<input type="password" name="password" placeholder="enter your password"> <br />
-<input type="date" name="birthday" placeholder="Enter date: DD/MMM/YYYY">
-<input type="button" value="Submit" id ="btnSubmit">
+<input class = "regtext" type = "text" name="FName" placeholder="enter your first name"> <br />
+<input class = "regtext" type = "text" name="LName" placeholder="enter last name"> <br />
+<input class = "regtext" type = "text" name="RegEmail" placeholder="Email"> <br />
+<input class = "regtext" type="password" name="password" placeholder="enter your password"> <br />
+<input class = "regtext" type="date" name="birthday" placeholder="Enter date: Year/Day/Month"> <br />
+<input  type="button" value="Submit" id ="btnSubmit">
 
 
 </div>
