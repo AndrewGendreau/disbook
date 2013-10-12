@@ -22,7 +22,7 @@ color: #DC143C;
 }
 .reg {
 height: 30%;
-width: 19%;
+width: 25%;
 background-color: #DC143C;
 position: relative;
 margin-top: 2%;
@@ -32,4 +32,16 @@ border-radius: 25px;
 p {
 margin-top: 2%;
 margin-left: 40%;
+}
+.regtext {
+margin-left: -60%;
+
+}
+.logintext
+{
+margin-left: -30%;
+}
+body {
+ background-image:url('cloud.jpg');
+ background-percentage:cover;
 }
