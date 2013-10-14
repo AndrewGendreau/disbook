@@ -19,7 +19,7 @@ echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->
 }
 
 
-//INSERT INTO tbl_students (FirstName, LastName, Grade) VALUES( '$fname', '$lname', '$grade')"
+//INSERT INTO tbl_students (FirstName, LastName, Birthdate ...) VALUES( '$fname', '$lname', '$dob', ...)"
 $sql= "INSERT INTO DIS_USER_PROFILE(USER_FNAME, USER_LNAME, USER_BIRTHDATE, USER_EMAIL, USER_PASSWORD) VALUES('$fname', '$lname', '$dob', '$email', '$password' );";
 
 if(!$mysqli->query($sql))
