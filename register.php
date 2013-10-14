@@ -32,9 +32,4 @@ else {
 echo "Welcome to Disbook!!!";
 }
 
-
-
-
-
-
 ?>
