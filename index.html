@@ -4,6 +4,10 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="index.css" />
 <title> Disbook </title>
+<?php
+session_start();
+session['views']=1;
+?>
 </head>
 
 
@@ -54,7 +58,7 @@ if (thing == 1) {
 <body>
 
 <div class="top">
-<form action="" class = "boxes"> <br />
+<form action="login.php" class = "boxes" method="post"> <br />
 <input class = "logintext" type = "text" name="Emaillogin" placeholder="enter your email address"> <br />
 <input class = "logintext" type="password" name="password" placeholder="enter your password"> <br />
   <input type="submit" value="Login">
