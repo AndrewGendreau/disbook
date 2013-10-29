@@ -1,5 +1,9 @@
 <?php
 
+if(!$_POST['FName'] | !$_POST['LName'] | !$_POST['RegEmail'] | !$_POST['password'] | !$_POST['birthday']) 
+{
+	echo('You did not fill in a required field.');
+}
 // CLIENT INFORMATION
 
 $fname = htmlspecialchars(trim($_POST['fname']));
@@ -19,17 +23,20 @@ echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->
 }
 
 
-//INSERT INTO tbl_students (FirstName, LastName, Birthdate ...) VALUES( '$fname', '$lname', '$dob', ...)"
+//INSERT INTO tbl_students (FirstName, LastName, Grade) VALUES( '$fname', '$lname', '$grade')"
 $sql= "INSERT INTO DIS_USER_PROFILE(USER_FNAME, USER_LNAME, USER_BIRTHDATE, USER_EMAIL, USER_PASSWORD) VALUES('$fname', '$lname', '$dob', '$email', '$password' );";
 
+//Fix the error message
 if(!$mysqli->query($sql))
 {
-echo"Welcome!";
+
 echo "Query Failed: (" . $mysqli->errno . ") " . $mysqli->error;
-echo "Welcome to Disbook!!";
 }
-else {
-echo "Welcome to Disbook!!!";
-}
+
+
+
+
+
+
 
 ?>
