@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="index.css" />
+<title> Disbook </title>
+<?php
+session_start();
+session['views']=1;
+?>
+</head>
+
+
+
+
+<body>
+
+<div class="top">
+<form action="login.php" class = "boxes" method="post"> <br />
+<input class = "logintext" type = "text" name="Emaillogin" placeholder="enter your email address"> <br />
+<input class = "logintext" type="password" name="password" placeholder="enter your password"> <br />
+  <input type="submit" value="Login">
+</form>
+</div>
+<div>
+<table width ="100%" class="textTable">
+<tr>
+<td class="red">Welcome to Disbook.com!!!!! </td> </tr>
+<tr><td class="red"> Connect to your frenamies the way you want. </td> </tr>
+<tr><td class="red"> We have a Dislike Button! </td>
+ </tr>
+</table>
+</div>
+<div class="reg">
+<p> Want to join up? <p>
+<br />
+<form action="register.php" method="post">
+<input class = "regtext" type = "text" name="FName" placeholder="enter your first name"> <br />
+<input class = "regtext" type = "text" name="LName" placeholder="enter last name"> <br />
+<input class = "regtext" type = "text" name="RegEmail" placeholder="Email"> <br />
+<input class = "regtext" type="password" name="password" placeholder="enter your password"> <br />
+<input class = "regtext" type="date" name="birthday" placeholder="Enter date: Year/Day/Month"> <br />
+<input  type="submit" value="Submit" >
+</form>
+
+</div>
+
+</body>
+</html>
