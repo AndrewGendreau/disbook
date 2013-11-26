@@ -30,12 +30,18 @@ $_SESSION['Birthdatedisplay'] = $row[2];
 
 <div id="ProfilePage">
     <div id="LeftCol">
-	<form action="" method="post" enctype="multipart/form-data">
-	<label
         <div id="Photo"></div>
         <div id="ProfileOptions">
         Picture Above
         </div>
+	<br>
+	<br>
+	<form action="picupload.php" method="post" enctype="multipart/form-data" name="upload">
+	<label for ="file">Upload pictures </label>
+	<input type="hidden" name="MAX_FILE_SIZE" value="9999999999" />
+	<input type="file" name="userFile" id="file"><br>
+	<input type="submit" name="upload" value="submit">
+	</form>
     </div>
 
     <div id="Info">
@@ -68,4 +74,6 @@ $_SESSION['Birthdatedisplay'] = $row[2];
     <div style="clear:both"></div>
 </div>
 <html>
+
+
 
