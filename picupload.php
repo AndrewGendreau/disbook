@@ -1,16 +1,15 @@
 <?php
 session_start();
+$email = $_SESSION['email'];
 $mysqli= new mysqli("willy", "agendrea", "agendrea", "agendrea");
 // for your reference (host,username,password,dbname);
 if ($mysqli->connect_errno)
 {
 echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-echo "test";
 
 if(isset($_FILES['userFile']) && $_FILES['userFile']['size'] > 0)
 {
-echo "hi";
 //$fileName = $_FILES['file']['name'];
 $tmpName  = $_FILES['userFile']['tmp_name'];
 echo $tmpName;
@@ -29,14 +28,19 @@ fclose($fp);
 
 //include 'library/config.php';
 //include 'library/opendb.php';
-//The problem is the query
-$query = "INSERT INTO DIS_PHOTOS (PHOTO_NAME, PHOTO_DATE, PHOTO_DATA, USER_EMAIL) ".
-"VALUES ('$tmpName', 'SYSDATE', '$content', $_SESSION['EMAIL'])";
+$sql = "INSERT INTO DIS_PHOTOS (PHOTO_NAME, PHOTO_DATE, PHOTO_DATA, USER_EMAIL) VALUES ('$tmpName', 'SYSDATE', '$content', '$email')";
 
 
-mysql_query($query) or die('Error, query failed');
+if(!$mysqli->query($sql))
+	{
+		echo "Query Failed: (" . $mysqli->errno . ") " . $mysqli->error;
+	}
+else
+	{
+
 //include 'library/closedb.php';
 
 echo "<br>File $tmpName uploaded<br>";
+	}
 }
 ?> 
