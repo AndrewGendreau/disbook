@@ -21,6 +21,11 @@ $_SESSION['Birthdatedisplay'] = $row[2];
 	{
 		window.location.replace("logout.php");
 	}
+
+	function events()
+	{
+                window.location.replace("eventpage.php");
+	}
 </script>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -70,6 +75,7 @@ $_SESSION['Birthdatedisplay'] = $row[2];
     </div>
 
 <a href = "index.html"><button type= "button" id="logoutBtn" onclick="logout()"> Logout </button> </a>
+<button type= "button" id="EventBtn" onclick="events()"> Events </button> 
 
     <div style="clear:both"></div>
 </div>
