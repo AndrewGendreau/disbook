@@ -6,14 +6,15 @@ if ($mysqli->connect_errno)
 {
 echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
+//Sql connection
 
-//echo ('I work!');
 $sql = "SELECT USER_FNAME, USER_LNAME, USER_BIRTHDATE FROM DIS_USER_PROFILE WHERE USER_EMAIL = '".$_SESSION['email']."'";
-$data = $mysqli->query($sql) or die(mysql_error());
-$row = $data->fetch_row();
-$_SESSION['Firstnamedisplay'] = $row[0];
-$_SESSION['Lastnamedisplay'] = $row[1];
-$_SESSION['Birthdatedisplay'] = $row[2];
+//Grabs the user profile info from the database
+$data = $mysqli->query($sql) or die(mysql_error());//executes the query and stores it in data
+$row = $data->fetch_row();//Fetches the rows from data
+$_SESSION['Firstnamedisplay'] = $row[0];//assigns the first name 0th element inthe array to a session variable
+$_SESSION['Lastnamedisplay'] = $row[1];//assigns the last name the 1st element in the array to another session variable
+$_SESSION['Birthdatedisplay'] = $row[2];//assigns the bith date the 2nd element in the array to another session variable
 ?>
 
 <script type="text/javascript">
@@ -21,11 +22,12 @@ $_SESSION['Birthdatedisplay'] = $row[2];
 	{
 		window.location.replace("logout.php");
 	}
-
+//function for the logout button that points calls logout.php
 	function events()
 	{
                 window.location.replace("eventpage.php");
 	}
+	//function for the events button that points calls eventpage.php
 </script>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -74,8 +76,10 @@ $_SESSION['Birthdatedisplay'] = $row[2];
        
     </div>
 
-<a href = "index.html"><button type= "button" id="logoutBtn" onclick="logout()"> Logout </button> </a>
-<button type= "button" id="EventBtn" onclick="events()"> Events </button> 
+<a href = "index.html"><button type= "button" id="logoutBtn" onclick="logout()"> Logout </button> </a> 
+<!--uses onclick and calls the javascript function logout and the hyperlink points back to index.html -->
+<button type= "button" id="EventBtn" onclick="events()"> Events </button>
+<!--uses onclick and calls the javascript function events -->
 
     <div style="clear:both"></div>
 </div>
