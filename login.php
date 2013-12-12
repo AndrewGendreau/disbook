@@ -11,7 +11,7 @@ if ($mysqli->connect_errno)
 {
 echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
-
+//Sql connection
 
 
  // makes sure they filled it in
@@ -21,9 +21,7 @@ echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->
 //	echo('You did not fill in a required field.');
 //}
 
-//Check with password
-//$sql = "SELECT USER_FNAME,USER_LNAME FROM DIS_USER_PROFILE WHERE USER_EMAIL = '".$_POST['Emaillogin']."' AND USER_PASSWORD = '".$_POST['password']."'"; 
-//echo $sql;
+//Check password
 $check = $mysqli->query("SELECT USER_FNAME,USER_LNAME FROM DIS_USER_PROFILE WHERE USER_EMAIL = '".$_POST['Emaillogin']."' AND USER_PASSWORD = '".$_POST['password']."'")or die(mysql_error());
 echo $check->num_rows;
 
